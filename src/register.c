@@ -21,7 +21,7 @@ extern SEXP C_transpose_list(SEXP, SEXP);
 extern SEXP R_base64_decode(SEXP);
 extern SEXP R_base64_encode(SEXP);
 extern SEXP R_integer64_to_char(SEXP, SEXP);
-extern SEXP R_num_to_char(SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP R_num_to_char(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP R_parse(SEXP, SEXP);
 extern SEXP R_parse_connection(SEXP, SEXP);
 extern SEXP R_reformat(SEXP, SEXP, SEXP);
