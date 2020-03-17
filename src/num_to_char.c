@@ -17,7 +17,11 @@ SEXP R_num_to_char(SEXP x, SEXP digits, SEXP na_as_string, SEXP use_signif, SEXP
         if(na_string == NA_LOGICAL){
           SET_STRING_ELT(out, i, NA_STRING);
         } else if(na_string){
-          SET_STRING_ELT(out, i, mkChar("\"NA\""));
+          if(na_null){
+            SET_STRING_ELT(out, i, mkChar("null"));
+          }else{
+            SET_STRING_ELT(out, i, mkChar("\"NA\""));
+          }
         } else {
           SET_STRING_ELT(out, i, mkChar("null"));
         }

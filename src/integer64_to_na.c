@@ -2,9 +2,10 @@
 #include "modp_numtoa.h"
 #define NA_INTEGER64 LLONG_MIN
 
-SEXP R_integer64_to_char(SEXP x, SEXP na_as_string){
+SEXP R_integer64_to_char(SEXP x, SEXP na_as_string, SEXP na_as_null){
   int len = length(x);
   int na_string = asLogical(na_as_string);
+  int na_null = asLogical(na_as_null);
   long long * xint = (long long *) REAL(x);
   char buf[32];
   SEXP out = PROTECT(allocVector(STRSXP, len));
@@ -13,7 +14,11 @@ SEXP R_integer64_to_char(SEXP x, SEXP na_as_string){
       if(na_string == NA_LOGICAL){
         SET_STRING_ELT(out, i, NA_STRING);
       } else if(na_string){
-        SET_STRING_ELT(out, i, mkChar("\"NA\""));
+        if(na_null){
+          SET_STRING_ELT(out, i, mkChar("null"));
+        }else{
+          SET_STRING_ELT(out, i, mkChar("\"NA\""));
+        }
       } else {
         SET_STRING_ELT(out, i, mkChar("null"));
       }

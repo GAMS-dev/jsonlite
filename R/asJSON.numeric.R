@@ -17,15 +17,16 @@ asjson_numeric_fun <- function(x, digits = 5, use_signif = is(digits, "AsIs"),
     stop("invalid na_as_string")
   )
 
+  dotsList <- list(...)
+  na_as_null <- "na_as_null" %in% names(dotsList) && isTRUE(dotsList[["na_as_null"]])
+
   # old R implementation
   # tmp <- num_to_char_R(x, digits, na_as_string);
 
   # fast C implementation
   tmp <- if(is(x, "integer64")){
-    integer64_to_char(x, na_as_string)
+    integer64_to_char(x, na_as_string, na_as_null)
   } else {
-    dotsList <- list(...)
-    na_as_null <- "na_as_null" %in% names(dotsList) && isTRUE(dotsList[["na_as_null"]])
     num_to_char(x, digits, na_as_string, use_signif, always_decimal, na_as_null);
   }
 
