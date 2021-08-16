@@ -25,7 +25,7 @@ write_json(x, path, ...)
 }
 \description{
 These functions are similar to \link{toJSON} and \link{fromJSON} except they
-explicitliy distinguish between path and literal input, and do not simplify
+explicitly distinguish between path and literal input, and do not simplify
 by default.
 }
 \examples{
@@ -37,4 +37,7 @@ read_json(tmp)
 
 # A data frame
 read_json(tmp, simplifyVector = TRUE)
+}
+\seealso{
+\code{\link{fromJSON}}, \code{\link{stream_in}}
 }

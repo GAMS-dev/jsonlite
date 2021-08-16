@@ -1,13 +1,14 @@
 #' Read/write JSON
 #'
 #' These functions are similar to \link{toJSON} and \link{fromJSON} except they
-#' explicitliy distinguish between path and literal input, and do not simplify
+#' explicitly distinguish between path and literal input, and do not simplify
 #' by default.
 #'
 #' @export
 #' @rdname read_json
 #' @param path file on disk
 #' @param simplifyVector simplifies nested lists into vectors and data frames. See \link{fromJSON}.
+#' @seealso \code{\link{fromJSON}}, \code{\link{stream_in}}
 #' @examples tmp <- tempfile()
 #' write_json(iris, tmp)
 #'
