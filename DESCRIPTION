@@ -1,5 +1,5 @@
 Package: jsonlite
-Version: 1.8.0.999
+Version: 1.8.4.999
 Title: A Robust, High Performance JSON Parser and Generator for R (adjusted for use in MIRO)
 License: MIT + file LICENSE
 Depends: methods
@@ -23,13 +23,12 @@ Description: A reasonably fast JSON parser and generator, optimized for statisti
     for use with dynamic data in systems and applications.
 Suggests:
     httr,
-    curl,
     vctrs,
     testthat,
     knitr,
     rmarkdown,
     R.rsp,
     sf
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
