@@ -1,5 +1,5 @@
 Package: jsonlite
-Version: 1.8.8.999
+Version: 1.8.9.999
 Title: A Robust, High Performance JSON Parser and Generator for R (adjusted for use in MIRO)
 License: MIT + file LICENSE
 Depends: methods
