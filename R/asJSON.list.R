@@ -1,4 +1,4 @@
-setMethod("asJSON", "list", function(x, collapse = TRUE, na = NULL, oldna = NULL, is_df = FALSE, auto_unbox = FALSE, indent = NA_integer_, no_dots = FALSE, ...) {
+setMethod("asJSON", "list", function(x, collapse = TRUE, na = NULL, oldna = NULL, auto_unbox = FALSE, indent = NA_integer_, no_dots = FALSE, ...) {
   # reset na arg when called from data frame
   if (identical(na, "NA")) {
     na <- oldna
@@ -25,7 +25,7 @@ setMethod("asJSON", "list", function(x, collapse = TRUE, na = NULL, oldna = NULL
   # }
 
   # note we are NOT passing on the container argument.
-  tmp <- if (is_df && auto_unbox) {
+  tmp <- if (is.data.frame(x) && auto_unbox) {
     vapply(
       x,
       function(y, ...) {

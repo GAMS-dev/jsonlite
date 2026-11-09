@@ -31,7 +31,7 @@ setMethod("asJSON", "data.frame", function(x, na = c("NA", "null", "string"), co
 
   # Column based is same as list. Do not pass collapse arg because it is a named list.
   if (dataframe == "columns") {
-    return(asJSON(as.list(x), is_df = TRUE, na = na, dataframe = dataframe, complex = complex, rownames = rownames, indent = indent, no_dots = no_dots, ...))
+    return(callNextMethod())
   }
 
   # Determine "oldna". This is needed when the data frame contains a list column
